@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  dbregions:
+    container_name: postgreSQL_region
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: regioncatalog
+    volumes:
+      - ./:/basedir
+    ports:
+      - "5432:5432"
